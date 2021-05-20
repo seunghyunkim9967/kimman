@@ -56,4 +56,51 @@ public class ServiceDao {
 //	@Autowired
 //	MemberDao dao
 	
+	
+	
+	//그러니까
+	//resources xml 파일에 이제 작성한 Service,Dao bean 객체를 등록 해주는거지 
+	// <beans 생략 >
+	
+	//	<context:annotation-config />
+	//	
+	//	<bean id="bookDao" class="com.패키지명.BookDao"/>
+	//	<bean id="bookService" class="com.패키지명.BookService"/>
+	//	...
+	//	...
+	//	...
+	//	...
+		
+	
+	/*
+	java 파일로 등록 할거야
+	import
+	@Configuration*/
+	//public class MemberConfig {
+	//<bean id="studentDao" class=ems.member.dao.StudentDao"/>
+		//== //동일
+		/* @Bean
+		 * public StudentDao studentDao() {
+		 * 
+		 * return new StudentDao();
+		 * 
+		 * }
+		 */
+	/*
+	 * <bean id="Service" class="패키지경로.클래스명"> <constructor-arg ref="studentDao"></>
+	 * </bean>
+	 * ==
+	 * @Bean
+	 * public StudentService registerService() {
+	 *  return new StudentService(studentDaO())
+	 * }
+	 * 
+	 * 
+	 */
+/*	}
+	}
+	
+	
+
+*/
 }
