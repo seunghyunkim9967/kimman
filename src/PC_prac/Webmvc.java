@@ -51,6 +51,22 @@
  * return "success";// 뷰로 사용되는 JSP 파일명
  * 
  * }
+ * 컨트롤러 객체 - Model 타입의 파라미터
+ * //	
+//	@RequestMapping("/success")
+//	Model = 파라미터로 모델 객체를 넣어줌
+//	public String success(Model model) {
+//		
+//		model.setAttribute("Data","model has data!!");
+//		속성 이름"Data",
+//		속성 값"model has data!!"
+//	
+//	}
+//	개발자는 모델 객체에 데이터를 담아서 DispatcherServlet에 전달할 수 있다.
+//	DispatcherServlet에 전달된 Model 데이터는 View에서 가공되어 클라이언트한테
+//	응답처리 된다.
+//	
+//	
  * 
  * 
  * 
@@ -65,3 +81,44 @@
  * 
  * }
  */
+
+//View 객체
+//스프링 설정파일에 InternalResourceViewResolver 빈 객체를 하나 생성
+//해당하는 적합한 뷰를 찾아주는 객체인데
+//리턴값과 InternalResourceViewResolver의 
+//suffix값은 ".jsp" 까지 합쳐서 
+//retunr + .jsp 의 JSP파일을 찾아서 뷰단에 보여준다
+//
+//자 전체적인 웹 프로그래밍 구조를 봅시다
+//
+//1. 최초 사용자 요청
+//http://localhost:9090/success
+//	DispatcherServlet을 받겠지 어떻게 처음에 만들어준다?
+//	스프링 프레임워크에 있는것으로 Web.xml에서 서블릿 등록을 하고!
+//	초기 파라미터로 스프링 설정파일을 설정한다!
+//	
+//	컨트롤러를 찾아 누가? 핸들러 맵핑!
+//	컨트롤러는 어찌 만드냐?
+//	@Contoller 어노테이션이 적용된 클래스를 검색하는거야
+//	적합한 컨트롤러 찾았어 그럼 다시 
+//	DispatcherServlet으로 가
+//	그럼 DispatcherServlet 에서는
+//	적합한 메서드를 찾아야겠지 ?
+//	그럼 사용자 요청 메서드가
+//	success잖아
+//	그러면
+//	@RequestMapping("success")인 녀석을 찾아주는겨
+//	메서드 찾았어 실행되겠지
+//	Service Dao DB 들이 있겠지 실행이 됐겠지
+//	
+//	DispatcherServlet로 다시 가겠지
+//	다 처리가 됐으면 Model 과 View가 오죠
+//	그럼 ViewResolver에 의해서! 검색된 success.jsp < 요놈이 실행이 되겠지
+//	그럼 브라우저에 View 뿌려주는거임 
+//	브라우저에서 해당 JSP 응답 하는거지
+//	
+//
+
+
+
+
